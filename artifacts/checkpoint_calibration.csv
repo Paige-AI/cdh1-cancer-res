@@ -1,0 +1,3 @@
+,fold,checkpoint_path,linear_regression_slope,linear_regression_intercept,sigmoid_a,sigmoid_b
+0,0,demo_checkpoints/aggregator_fold_0.ckpt,8.238287,-2.538993,-1.126694,-0.116812
+1,1,demo_checkpoints/aggregator_fold_1.ckpt,6.693108,-1.782781,-1.094455,-0.095029
