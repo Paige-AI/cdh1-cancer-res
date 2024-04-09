@@ -14,7 +14,9 @@ ADD LINK TO PAPER.
 After cloning the repository to your local machine, install the code in editable mode from the repositories root directory `cdh1-cancer-dis/` by executing `pip install -e .`
 
 ### Test the setup
-To test that the installation works, script a single aggregator model. This is done by executing `python -m cdh1_cancer_dis.model`
+To test that the installation works, script a single aggregator model. A successful test should return `Created torchscripted checkpoint at <PATH>`. To run the setup test, execute the following command: 
+```python -m cdh1_cancer_dis.model```
+
 
 ### Run the demo prediction
 - 1. Script the ensemble model: 
