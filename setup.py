@@ -12,7 +12,7 @@ def read_lines(filename: Path) -> List[str]:
 
 
 setup(
-    name='cdh1-cancer-dis',
+    name='cdh1-cancer-res',
     version='0.0.0a0',
     python_requires='>=3.8',
     package_dir={'': 'src'},
