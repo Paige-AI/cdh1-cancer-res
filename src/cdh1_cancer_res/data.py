@@ -1,8 +1,10 @@
-import pandas as pd
-import torch
 from pathlib import Path
 from typing import List, Tuple
+
+import pandas as pd
+import torch
 from torch import Tensor
+
 from .env_var import EMBEDDINGS_PATH
 
 
@@ -28,7 +30,7 @@ def load_filtered_embeddings(
 def load_tile_embedding(file_stem: str) -> Tuple[pd.DataFrame, Tensor]:
     filename = Path(EMBEDDINGS_PATH) / file_stem
     df = pd.read_csv(f'{filename}.csv')
-    tensor = torch.load(f'{filename}.pt')
+    tensor = torch.load(f'{filename}.pt', weights_only=True)
     return df, tensor
 
 

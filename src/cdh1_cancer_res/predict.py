@@ -1,10 +1,12 @@
-from .model import ModelOutput
-import torch
 from typing import List
-from torch import Tensor
+
 import pandas as pd
-from .env_var import ENSEMBLE_MODEL_PATH, DATASET_CSV_PATH
-from .data import load_filtered_embeddings, load_dataset_df
+import torch
+from torch import Tensor
+
+from .data import load_dataset_df, load_filtered_embeddings
+from .env_var import DATASET_CSV_PATH, ENSEMBLE_MODEL_PATH
+from .model import ModelOutput
 
 
 def predict(model: torch.nn.Module, embeddings: List[Tensor]) -> List[ModelOutput]:

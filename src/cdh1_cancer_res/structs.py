@@ -1,4 +1,5 @@
 from typing import Dict, NamedTuple
+
 from torch import Tensor
 
 

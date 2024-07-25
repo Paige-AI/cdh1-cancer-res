@@ -1,17 +1,17 @@
 from pathlib import Path
 from typing import Dict, Optional, Tuple, Type, Union
 
-import torch
 import pandas as pd
+import torch
 from pytorch_lightning import LightningModule
 from torch import Tensor, nn
 from torch.nn import functional as F
 
 from .env_var import (
+    ARTIFACTS_DIR_PATH,
     CHECKPOINT_CALIBRATION_FILE_PATH,
     CHECKPOINT_FILE_EXTENSION,
     TORCHSCRIPTED_CHECKPOINT_FILE_EXTENSION,
-    ARTIFACTS_DIR_PATH,
 )
 from .structs import ModelOutput
 
@@ -191,7 +191,7 @@ def init_cdh1_model(
     extract_tile_level_backbone_embeddings: bool = False,
 ) -> AggregatorClassificationModel:
     """Initializes the aggregator classification model architecture with weights for inference."""
-    checkpoint = torch.load(checkpoint_path, map_location=torch.device('cpu'))
+    checkpoint = torch.load(checkpoint_path, map_location='cpu', weights_only=True)
     agg = AggregatorClassificationModel(
         in_channels=512,
         out_channels1=512,

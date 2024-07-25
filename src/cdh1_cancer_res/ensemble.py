@@ -1,19 +1,18 @@
 from typing import Dict, Optional, Protocol
 
 import torch
-from .structs import ModelOutput
 from pytorch_lightning import LightningModule
 from torch import Tensor, nn
+
+from .structs import ModelOutput
 
 
 class AggregatorLike(Protocol):
     """Required methods in order to work with calibration and ensemble classes."""
 
-    def __call__(self, x: Tensor, padding_masks: Optional[Tensor]) -> ModelOutput:
-        ...
+    def __call__(self, x: Tensor, padding_masks: Optional[Tensor]) -> ModelOutput: ...
 
-    def forward(self, x: Tensor, padding_masks: Optional[Tensor]) -> ModelOutput:
-        ...
+    def forward(self, x: Tensor, padding_masks: Optional[Tensor]) -> ModelOutput: ...
 
 
 class NaiveLR(nn.Module):
