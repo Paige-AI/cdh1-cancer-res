@@ -1,16 +1,15 @@
 from pathlib import Path
-from .ensemble import (
-    AggregatorEnsemble,
-    CalibratedAggregatorClassificationModel,
-    SklearnPredictionCallibration,
-    AggregatorLike,
-)
-from .model import (
-    init_cdh1_model,
-)
+
 import pandas as pd
 
-from .env_var import CHECKPOINT_CALIBRATION_FILE_PATH, ENSEMBLE_MODEL_PATH, ARTIFACTS_DIR_PATH
+from .ensemble import (
+    AggregatorEnsemble,
+    AggregatorLike,
+    CalibratedAggregatorClassificationModel,
+    SklearnPredictionCallibration,
+)
+from .env_var import ARTIFACTS_DIR_PATH, CHECKPOINT_CALIBRATION_FILE_PATH, ENSEMBLE_MODEL_PATH
+from .model import init_cdh1_model
 
 
 def build_agata_ensemble(metadata_path: str) -> AggregatorLike:
