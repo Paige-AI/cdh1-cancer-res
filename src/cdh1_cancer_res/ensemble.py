@@ -16,7 +16,7 @@ class AggregatorLike(Protocol):
 
 
 class NaiveLR(nn.Module):
-    """Parameterized using predifined slope and intercept scalars.
+    """Parameterized using predefined slope and intercept scalars.
     This is useful for rescaling of prediction values with known scaling weights.
     """
 
@@ -31,7 +31,7 @@ class NaiveLR(nn.Module):
 
 
 class SklearnPredictionCallibration(nn.Module):
-    """Combines the CallibratedClassifierCV calculations when the base_estimator is a logistic regression,
+    """Combines the CalibratedClassifierCV calculations when the base_estimator is a logistic regression,
     i.e. fuses ShiftedSigmoid(NaiveLR(x)). Assumes all parameters have been pre-determined using scikit-learn version 1.1.0
     [https://scikit-learn.org/stable/modules/generated/sklearn.calibration.CalibratedClassifierCV.html].
     """
@@ -83,7 +83,7 @@ class AggregatorEnsemble(LightningModule):
 
         Assumptions:
           1. all ensembled models have the same output keys,
-          2. all ensembled models prediction are of the same length.
+          2. all ensembled models' predictions are of the same length.
         """
         backbone_embedding: Optional[Tensor] = None
         heads_activations: Optional[Dict[str, Tensor]] = None
