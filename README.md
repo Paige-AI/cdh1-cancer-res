@@ -24,7 +24,7 @@ To test that the installation works, script a single aggregator model. A success
   - This will create the torchscripted ensemble model we will require to run our demo predictions.
 - 2. Predict the CDH1 on the provided demo embeddings using the torchscripted ensemble model:
   - `python -m cdh1_cancer_res.predict`
-  - The prediction step should print our the ground truth values, the model's continuous and binarized prediction. 
+  - The prediction step should print out the ground truth values, the model's continuous and binarized prediction. 
 
 ___
 [Paige.AI CDH1 Cancer Research](https://github.com/Paige-AI/cdh1-cancer-res) (c) by Paige.AI

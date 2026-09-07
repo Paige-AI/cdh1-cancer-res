@@ -145,7 +145,7 @@ class AggregatorClassificationModel(LightningModule):
 
         .. note::
             this API is named as such in order to achieve consistency with timm architectures,
-            which all posess a `forward_features` method.
+            which all possess a `forward_features` method.
         """
         x_1 = self.conv1(x)
         x_1 = self.activation(x_1)
@@ -159,7 +159,7 @@ class AggregatorClassificationModel(LightningModule):
     ) -> Tuple[Tensor, Tensor]:
         """Applies simple dot attention.
         x_3 is accumulated for each attention head. Hence, it's of shape (Heads, Batch, Sequence, Features).
-        Sequence is bigger than 1 if the attention implemention doesn't reduce across the sequence dimension.
+        Sequence is bigger than 1 if the attention implementation doesn't reduce across the sequence dimension.
         """
         attn_masks = []
         x_3 = []
